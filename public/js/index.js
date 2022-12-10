@@ -4,7 +4,6 @@ const moveSound = new Audio("../music/move.mp3");
 const gameOverSound = new Audio("../music/gameover.mp3");
 const musicSound = new Audio("../music/music.mp3");
 const foodSound = new Audio("../music/food.mp3");
-
 const speed = 10;
 let lastPaintTime = 0;
 let snakeArr = [{ x: 13, y: 15 }];
@@ -44,7 +43,6 @@ const gameEngine = () => {
       inputDir = { x: 0, y: 0 };
       alert("Game over! Press any key to play again.");
       snakeArr = [{ x: 13, y: 15 }];
-      musicSound.play();
       score = 0;
    }
 
