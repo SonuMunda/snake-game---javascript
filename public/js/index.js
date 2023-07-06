@@ -73,15 +73,27 @@ const gameEngine = () => {
    let board = document.querySelector(".board");
    board.innerHTML = "";
 
-   //   display the snake
+   // display the snake
    snakeArr.forEach((element, index) => {
       snakeElement = document.createElement("div");
       snakeElement.style.gridRowStart = element.y;
       snakeElement.style.gridColumnStart = element.x;
-      if (index === 0) snakeElement.classList.add("head");
-      else snakeElement.classList.add("snake");
+      if (index === 0) {
+         snakeElement.classList.add("head");
+
+         // Create and append the eyes to the snake's head
+         const eye1 = document.createElement("div");
+         const eye2 = document.createElement("div");
+         eye1.classList.add("eye");
+         eye2.classList.add("eye");
+         snakeElement.appendChild(eye1);
+         snakeElement.appendChild(eye2);
+      } else {
+         snakeElement.classList.add("snake");
+      }
       board.appendChild(snakeElement);
    });
+
    //   display the food
    snakeArr.forEach((element, index) => {
       foodElement = document.createElement("div");
